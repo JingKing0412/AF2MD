@@ -6,7 +6,7 @@ import shap
 import matplotlib.pyplot as plt
 import os
 
-model_path = r'C:\Users\zhao.jingxuan\pythonProject\3011\catboost_info\model_MLPllmin9994.pkl'
+model_path = 'catboost_info\model_MLPllmin9994.pkl'
 model = joblib.load(model_path)
 import os
 
@@ -18,7 +18,7 @@ feature_names = [
 
 # Streamlit 名字
 st.title("Heart Disease Predictor")
-model_path1 = r'C:\Users\zhao.jingxuan\pythonProject\3011\catboost_info\min_max_scaler9994.pkl'
+model_path1 = 'catboost_info\min_max_scaler9994.pkl'
 min_max_scaler = joblib.load(model_path1 )
 # User inputs
 import streamlit as st
@@ -39,7 +39,7 @@ features_scaled = np.array([feature_values])
 # 使用加载的 MinMaxScaler 对用户输入的数据进行归一化
 features = min_max_scaler.transform(features_scaled)
 # Load background data for SHAP
-background_data_path = r'C:\Users\zhao.jingxuan\pythonProject\3011\catboost_info\train_sample_501234.csv'
+background_data_path = 'catboost_info\train_sample_501234.csv'
 background_data = pd.read_csv(background_data_path)
 
 # 确保选择特定的列进行缩放
